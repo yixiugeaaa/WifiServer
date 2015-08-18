@@ -2,11 +2,11 @@
 namespace Home\Model;
 use Think\Model;
 class UserModel extends Model {
-    // ¶¨Òå×Ô¶¯ÑéÖ¤
+    // éªŒè¯
     protected $_validate    =   array(
-        array('phone','require','µç»°ºÅÂë±ØĞë'),
+        array('phone','require','æ‰‹æœºå·æ—¶å¿…é¡»çš„'),
     );
-    // ¶¨Òå×Ô¶¯Íê³É
+    // è‡ªåŠ¨å®Œæˆ
     protected $_auto    =   array(
         array('create_time','time',1,'function'),
     );

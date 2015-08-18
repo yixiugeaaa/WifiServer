@@ -1,9 +1,15 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: xzjs
+ * Date: 15/8/18
+ * Time: 涓嬪崍9:54
+ */
 namespace Home\Model;
 use Think\Model;
 
-class FlowModel extends Model {
-    // 定义自动完成
+class LineModel extends Model {
+    // 鑷姩瀹屾垚
     protected $_auto    =   array(
         array('create_time','time',1,'function'),
     );

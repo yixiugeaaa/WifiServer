@@ -1,15 +1,15 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Childe
- * Date: 2015/8/12
- * Time: 10:19
+ * User: xzjs
+ * Date: 15/8/18
+ * Time: 下午9:52
  */
 namespace Home\Controller;
 
 use Think\Controller;
 
-class FlowController extends Controller
+class BusController extends Controller
 {
 
 }
