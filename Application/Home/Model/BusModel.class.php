@@ -6,11 +6,15 @@
  * Time: 下午9:48
  */
 namespace Home\Model;
-use Think\Model;
+use Think\Model\RelationModel;
 
-class FlowModel extends Model {
+class BusModel extends RelationModel {
     // 自动完成
     protected $_auto    =   array(
         array('create_time','time',1,'function'),
+    );
+
+    protected $_link=array(
+        'Line' => self::BELONGS_TO
     );
 }

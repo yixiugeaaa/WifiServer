@@ -11,5 +11,19 @@ use Think\Controller;
 
 class BusController extends Controller
 {
+    public function insert(){
+        $bus=D('Bus');
+        if($bus->create()){
+            $result=$bus->add();
+            if($result){
+                return json_encode($result);
+            }else{
+                return json_encode('false');
+            }
+        }
+    }
 
+    public function add(){
+        $this->display();
+    }
 }
