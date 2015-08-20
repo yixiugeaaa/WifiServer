@@ -55,4 +55,14 @@ class LineController extends Controller
             }
         }
     }
+
+    /**
+     * 公交模糊搜索
+     * @param $key 查询的关键字
+     */
+    public function search($key){
+        $Line=M("Line");
+        $data=$Line->where('line_no like "%'.$key.'%"')->select();
+        echo json_encode($data);
+    }
 }
