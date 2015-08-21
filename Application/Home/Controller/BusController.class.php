@@ -23,7 +23,16 @@ class BusController extends Controller
         }
     }
 
-    public function add(){
-        $this->display();
+    /**
+     * 更新公交车当前的位置
+     * @param $mac 公交车的mac
+     * @param $x 经度
+     * @param $y 纬度
+     */
+    public function update($mac,$x,$y){
+        $Bus=M("Bus");
+        $data=array('position_x'=>$x,'position_y'=>$y);
+        $i = $Bus->where('mac='.$mac)->setField($data);
+        echo $i;
     }
 }
