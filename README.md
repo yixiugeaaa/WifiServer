@@ -16,9 +16,24 @@ mac地址和经度，纬度分别为发送的参数，上传时间待测试
 
 ```
 [
-{"Dmac":"00-0c-29-fa-8f-9d","Umac":"01-0c-29-fa-8f-9d","Time":"2015/8/21 10/21/30","Url":"www.baidu.com"},
-{"Dmac":"00-0c-29-fa-8f-9d","Umac":"01-0c-29-fa-8f-9d","Time":"2015/8/21 10/21/30","Url":"www.baidu.com"},
-{"Dmac":"00-0c-29-fa-8f-9d","Umac":"01-0c-29-fa-8f-9d","Time":"2015/8/21 10/21/30","Url":"www.baidu.com:80"},
+    {
+        "Dmac": "00-0c-29-fa-8f-9d",
+        "Umac": "01-0c-29-fa-8f-9d",
+        "Time": "2015/8/21 10/21/30",
+        "Url": "www.baidu.com"
+    },
+    {
+        "Dmac": "00-0c-29-fa-8f-9d",
+        "Umac": "01-0c-29-fa-8f-9d",
+        "Time": "2015/8/21 10/21/30",
+        "Url": "www.baidu.com"
+    },
+    {
+        "Dmac": "00-0c-29-fa-8f-9d",
+        "Umac": "01-0c-29-fa-8f-9d",
+        "Time": "2015/8/21 10/21/30",
+        "Url": "www.baidu.com:80"
+    }
 ]
 ```
 
