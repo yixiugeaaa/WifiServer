@@ -8,9 +8,10 @@
 //exec("cd d:/xampp/htdocs/wifi/ git pull ",$output);
 exec("D:");
 exec("cd xampp/htdocs/wifi");
-exec("git pull",$output);
+exec("git pull",$output,$return);
 $myfile=fopen("log.txt","w");
 foreach ($output as $out) {
     fwrite($myfile,$out."\n");
 }
+fwrite($return."\n");
 fclose($myfile);
