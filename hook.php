@@ -5,4 +5,9 @@
  * Date: 15/8/25
  * Time: 上午11:18
  */
-exec("cd d:/xampp/htdocs/wifi/ git pull ");
+exec("cd d:/xampp/htdocs/wifi/ git pull ",$output);
+$myfile=fopen("log.txt","w");
+foreach ($output as $out) {
+    fwrite($myfile,$out."\n");
+}
+fclose($myfile);
