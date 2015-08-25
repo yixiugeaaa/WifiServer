@@ -36,4 +36,18 @@ mac地址和经度，纬度分别为发送的参数，上传时间待测试
     ]
 }
 ```
-
+##查询用户流量
+###http://localhost/wifi/index.php/home/user/update/id/{id}
+id为用户的id,目前只有1,返回的json格式如下
+```
+{
+    "id": "1",
+    "phone": "123",
+    "mac": "123",
+    "flow": "120",
+    "create_time": null
+}
+```
+##修改用户流量
+###http://localhost/wifi/index.php/home/user/update/id/{id}/num/{num}
+id为用户的id,目前只有1,num为流量,为正增加流量,为负减少流量,为0相当于上一条查询用户流量功能,返回json格式与上调相同
