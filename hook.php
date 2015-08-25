@@ -8,7 +8,7 @@
 //exec("cd d:/xampp/htdocs/wifi/ git pull ",$output);
 error_reporting ( E_ALL );
 $dir = 'D:/xampp/htdocs/wifi/';//该目录为git检出目录
-$handle = popen('cd '.$dir.' && git pull 2>&1','r');
+/*$handle = popen('cd '.$dir.' && git pull 2>&1','r');
 $read = stream_get_contents($handle);
 printf($read);
 
@@ -18,4 +18,11 @@ $myfile=fopen("log.txt","w");
 fwrite($myfile,$read);
 fclose($myfile);
 
-pclose($handle);
+pclose($handle);*/
+exec("cd $dir && git pull",$output,$result);
+$myfile=fopen("log.txt","w");
+foreach ($output as $out) {
+    fwrite($myfile,$out."\n");
+}
+fclose($myfile);
+
