@@ -5,4 +5,4 @@
  * Date: 15/8/25
  * Time: 上午11:18
  */
-exec("cd d:/xampp/htdocs git pull https://github.com/xzjs/wifi.git");
+exec("cd d:/xampp/htdocs/wifi/ git pull ");
