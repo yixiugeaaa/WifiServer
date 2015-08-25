@@ -6,12 +6,16 @@
  * Time: 上午11:18
  */
 //exec("cd d:/xampp/htdocs/wifi/ git pull ",$output);
-exec("D:");
-exec("cd xampp/htdocs/wifi");
-exec("git pull",$output,$return);
+error_reporting ( E_ALL );
+$dir = 'D:/xampp/htdocs/wifi/';//该目录为git检出目录
+$handle = popen('cd '.$dir.' && git pull 2>&1','r');
+$read = stream_get_contents($handle);
+printf($read);
+
+
 $myfile=fopen("log.txt","w");
-foreach ($output as $out) {
-    fwrite($myfile,$out."\n");
-}
-fwrite($return."\n");
+
+fwrite($myfile,$read);
 fclose($myfile);
+
+pclose($handle);
