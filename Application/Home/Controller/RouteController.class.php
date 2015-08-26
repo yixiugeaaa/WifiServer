@@ -11,10 +11,18 @@ use Think\Controller;
 
 class RouteController extends Controller{
     public function ping(){
-        echo "pong";
+        $this->output("pong");
     }
 
     public function index(){
 
+    }
+
+    /**
+     * 格式化输出
+     * @param $str 要输出的字符串
+     */
+    private function output($str){
+        echo "--$str";
     }
 }
