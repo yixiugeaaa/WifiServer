@@ -51,3 +51,6 @@ id为用户的id,目前只有1,返回的json格式如下
 ##修改用户流量
 ###http://localhost/wifi/index.php/home/user/update/id/{id}/num/{num}
 id为用户的id,目前只有1,num为流量,为正增加流量,为负减少流量,为0相当于上一条查询用户流量功能,返回json格式与上调相同
+##心跳测试
+###http://localhost/wifi/index.php/home/route/ping
+测试心跳
