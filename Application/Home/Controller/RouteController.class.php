@@ -13,4 +13,8 @@ class RouteController extends Controller{
     public function ping(){
         echo "pong";
     }
+
+    public function index(){
+
+    }
 }
