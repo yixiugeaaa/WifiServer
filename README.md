@@ -64,6 +64,7 @@ id为用户的id,目前只有1,num为流量,为正增加流量,为负减少流�
         </thead>
         <tbody>
             <tr>
+                <td>1</td>
                 <td>Df</td>
                 <td>磁盘使用率的数字,url中不支持百分号</td>
             </tr>
