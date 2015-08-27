@@ -2,8 +2,39 @@
 公交wifi代码
 #接口
 ##单条路线查询
-###http://localhost/wifi/index.php/home/line/read/no/11
-最后的数字为可修改参数(目前的测试数据只有11路)
+###http://localhost/wifi/index.php/home/line/read/id/{id}
+{id}为查询路线的id,现在有1,2,返回json格式如下
+```
+{
+    "name": "11路",
+    "start_time": "2015-08-20 09:00:00",
+    "end_time": "2015-08-20 19:00:00",
+    "type": "0",
+    "price": "2",
+    "stations": [
+        {
+            "id": 1,
+            "name": "A",
+            "sort": 0
+        },
+        {
+            "id": 2,
+            "name": "B",
+            "sort": 1
+        },
+        {
+            "id": 3,
+            "name": "C",
+            "sort": 2
+        },
+        {
+            "id": 4,
+            "name": "D",
+            "sort": 3
+        }
+    ]
+}
+```
 ##模糊搜索路线
 ###http://localhost/wifi/index.php/home/line/search/key/1
 最后的数字为要搜索的关键字,目前只有11路和12路

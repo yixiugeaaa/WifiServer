@@ -2,14 +2,15 @@
 /**
  * Created by PhpStorm.
  * User: xzjs
- * Date: 15/8/19
- * Time: 上午8:53
+ * Date: 15/8/27
+ * Time: 下午2:37
  */
 namespace Home\Model;
 use Think\Model\RelationModel;
 
-class StationModel extends RelationModel {
+class TlineModel extends RelationModel {
+
     protected $_link=array(
-        'Line'=>self::MANY_TO_MANY
+        'Line'=>self::HAS_MANY
     );
 }
