@@ -24,15 +24,14 @@ DROP TABLE IF EXISTS `think_bus`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `think_bus` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `mac` varchar(45) DEFAULT NULL,
   `position_x` float DEFAULT NULL,
   `position_y` float DEFAULT NULL,
   `line_id` int(11) DEFAULT NULL,
   `time` datetime DEFAULT NULL,
   `station_id` int(11) DEFAULT NULL,
   `no` varchar(45) DEFAULT NULL,
-  `direction` int(11) DEFAULT NULL,
-  `create_time` int(11) DEFAULT NULL,
+  `route_id` int(11) DEFAULT NULL,
+  `sort` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -43,7 +42,7 @@ CREATE TABLE `think_bus` (
 
 LOCK TABLES `think_bus` WRITE;
 /*!40000 ALTER TABLE `think_bus` DISABLE KEYS */;
-INSERT INTO `think_bus` VALUES (1,'123',40,40,1,'2015-08-26 10:10:04',4,'鲁B110',-1,NULL),(2,'456',20,20,1,'2015-08-26 10:10:04',2,'鲁B120',-1,NULL);
+INSERT INTO `think_bus` VALUES (1,30,30,1,'2015-08-26 10:10:04',3,'鲁B110',NULL,2),(2,20,20,1,'2015-08-26 10:10:04',2,'鲁B120',NULL,1);
 /*!40000 ALTER TABLE `think_bus` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -85,11 +84,11 @@ CREATE TABLE `think_line` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `start_time` datetime DEFAULT NULL,
   `end_time` datetime DEFAULT NULL,
-  `line_no` varchar(45) DEFAULT NULL,
-  `station_num` int(11) DEFAULT NULL,
-  `create_time` int(11) DEFAULT NULL,
+  `tline_id` int(11) DEFAULT NULL,
+  `start_station` varchar(45) DEFAULT NULL,
+  `end_station` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -98,8 +97,34 @@ CREATE TABLE `think_line` (
 
 LOCK TABLES `think_line` WRITE;
 /*!40000 ALTER TABLE `think_line` DISABLE KEYS */;
-INSERT INTO `think_line` VALUES (1,'2015-08-20 09:00:00','2015-08-20 19:00:00','11',4,NULL),(2,'2015-08-20 12:00:00','2015-08-20 20:00:00','12',0,NULL);
+INSERT INTO `think_line` VALUES (1,'2015-08-20 09:00:00','2015-08-20 19:00:00',1,'A','D'),(2,'2015-08-20 12:00:00','2015-08-20 20:00:00',1,'D','A'),(3,'2015-08-27 09:00:00','2015-08-20 19:00:00',2,'E','F'),(4,'2015-08-20 12:00:00','2015-08-20 20:00:00',2,'F','E');
 /*!40000 ALTER TABLE `think_line` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `think_line_station`
+--
+
+DROP TABLE IF EXISTS `think_line_station`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `think_line_station` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `line_id` int(11) DEFAULT NULL,
+  `station_id` int(11) DEFAULT NULL,
+  `sort` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `think_line_station`
+--
+
+LOCK TABLES `think_line_station` WRITE;
+/*!40000 ALTER TABLE `think_line_station` DISABLE KEYS */;
+INSERT INTO `think_line_station` VALUES (1,1,1,0),(2,1,2,1),(3,1,3,2),(4,1,4,3),(5,2,4,0),(6,2,3,1),(7,2,2,2),(8,2,1,3);
+/*!40000 ALTER TABLE `think_line_station` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -145,11 +170,8 @@ CREATE TABLE `think_station` (
   `name` varchar(45) DEFAULT NULL,
   `position_x` float DEFAULT NULL,
   `position_y` float DEFAULT NULL,
-  `line_id` int(11) DEFAULT NULL,
-  `sort` int(11) DEFAULT NULL,
-  `create_time` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -158,8 +180,34 @@ CREATE TABLE `think_station` (
 
 LOCK TABLES `think_station` WRITE;
 /*!40000 ALTER TABLE `think_station` DISABLE KEYS */;
-INSERT INTO `think_station` VALUES (1,'A',10,10,1,0,NULL),(2,'B',20,20,1,1,NULL),(3,'C',30,30,1,2,NULL),(4,'D',40,40,1,3,NULL);
+INSERT INTO `think_station` VALUES (1,'A',10,10),(2,'B',20,20),(3,'C',30,30),(4,'D',40,40),(5,'E',10,30),(6,'F',20,NULL);
 /*!40000 ALTER TABLE `think_station` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `think_tline`
+--
+
+DROP TABLE IF EXISTS `think_tline`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `think_tline` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `type` int(11) DEFAULT NULL,
+  `price` float DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `think_tline`
+--
+
+LOCK TABLES `think_tline` WRITE;
+/*!40000 ALTER TABLE `think_tline` DISABLE KEYS */;
+INSERT INTO `think_tline` VALUES (1,'11路',0,2),(2,'12路',0,2);
+/*!40000 ALTER TABLE `think_tline` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -225,4 +273,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-08-26 21:46:03
+-- Dump completed on 2015-08-28 16:21:26
