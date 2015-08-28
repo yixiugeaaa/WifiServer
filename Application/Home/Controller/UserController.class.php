@@ -14,6 +14,7 @@ class UserController extends Controller{
         $User=M("User");
         $User->where('id=' . $id)->setInc('flow', $num);
         $data=$User->where('id='.$id)->find();
-        echo json_encode($data);
+        //var_dump($data);
+        echo $data['flow'];
     }
 }
