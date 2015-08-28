@@ -68,6 +68,27 @@
     ]
 }
 ```
+##用户点击站点返回制定数量的最近的公交车
+###http://localhost/wifi/index.php/home/line/station/lid/1/sid/4/num/2
+所有数字都是参数,lid表示线路id,sid表示点击的站点id,num表示需要的数量,返回的json格式如下
+```
+{
+    "bus": [
+        {
+            "no": "鲁B120",
+            "distance": 2,
+            "name": "B",
+            "time": "2015-08-26 10:10:04"
+        },
+        {
+            "no": "鲁B110",
+            "distance": 1,
+            "name": "C",
+            "time": "2015-08-26 10:10:04"
+        }
+    ]
+}
+```
 ##路由器发送GPS心跳
 ###http://localhost/wifi/index.php/home/bus/update/mac/mac地址/x/经度/y/纬度
 mac地址和经度，纬度分别为发送的参数，上传时间待测试

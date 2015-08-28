@@ -16,6 +16,7 @@ class BusModel extends RelationModel {
 
     protected $_link=array(
         'Line' => self::BELONGS_TO,
-        'Route'=>self::HAS_ONE
+        'Route'=>self::HAS_ONE,
+        'Station'=>self::BELONGS_TO
     );
 }
