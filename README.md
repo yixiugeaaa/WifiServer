@@ -37,7 +37,37 @@
 ```
 ##模糊搜索路线
 ###http://localhost/wifi/index.php/home/line/search/key/1
-最后的数字为要搜索的关键字,目前只有11路和12路
+最后的数字为要搜索的关键字,目前只有11路和12路,返回json格式如下
+```
+{
+    "lines": [
+        {
+            "id": 1,
+            "name": "11路",
+            "start_station": "A",
+            "end_station": "D"
+        },
+        {
+            "id": 2,
+            "name": "11路",
+            "start_station": "D",
+            "end_station": "A"
+        },
+        {
+            "id": 3,
+            "name": "12路",
+            "start_station": "E",
+            "end_station": "F"
+        },
+        {
+            "id": 4,
+            "name": "12路",
+            "start_station": "F",
+            "end_station": "E"
+        }
+    ]
+}
+```
 ##路由器发送GPS心跳
 ###http://localhost/wifi/index.php/home/bus/update/mac/mac地址/x/经度/y/纬度
 mac地址和经度，纬度分别为发送的参数，上传时间待测试
