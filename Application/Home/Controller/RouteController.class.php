@@ -14,7 +14,7 @@ class RouteController extends Controller
     public function index(){
         $Route=D('Route');
         $list=$Route->relation(true)->select();
-        var_dump($list);
+        //var_dump($list);
         $this->assign('list',$list);
         $this->show();
     }
@@ -43,11 +43,5 @@ class RouteController extends Controller
         }
         $Command->add($data);
         $this->success('操作成功');
-    }
-
-    public function edit($id,$mac){
-        $this->assign('id',$id);
-        $this->assign('mac',$mac);
-        $this->display();
     }
 }
