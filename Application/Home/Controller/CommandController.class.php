@@ -21,7 +21,8 @@ class CommandController extends Controller{
             $data = $Command->where('mac="'.$mac.'" and finish=0')->find();
             if ($data) {
                 if($data['cmd']=='Reboot'){
-                    $Command->finish=1;
+                    $data['finish']=1;
+                    $Command->save($data);
                     $this->output("pong");
                 }else {
                     $this->output($data['cmd']);
