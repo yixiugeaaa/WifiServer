@@ -29,12 +29,12 @@ class CommandController extends Controller{
                 case "Df":
                     $Route=M('Route');
                     $Route->useage_rate=$arg;
-                    $Route->where("mac=$mac")->save();
+                    $Route->where('mac="'.$mac.'"')->save();
                     $Command->finish=1;
-                    $Command->where("mac=$mac")->save();
+                    $Command->where('mac="'.$mac.'"')->save();
                     break;
                 case "Ssid":
-                    $data=$Command->where("mac=$mac")->find();
+                    $data=$Command->where('mac="'.$mac.'"')->find();
                     if($arg!=$data['ssid']) {
                         //一些操作
                     }
@@ -54,7 +54,7 @@ class CommandController extends Controller{
                 default:
                     break;
             }
-            echo "pong";
+            $this->output('pong');
         }
     }
 
