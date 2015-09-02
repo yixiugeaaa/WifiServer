@@ -60,7 +60,7 @@ CREATE TABLE `think_command` (
   `finish` int(11) DEFAULT NULL,
   `createt_ime` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -145,7 +145,7 @@ CREATE TABLE `think_route` (
   `firmware_update` varchar(45) DEFAULT NULL,
   `contents_update` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -154,7 +154,7 @@ CREATE TABLE `think_route` (
 
 LOCK TABLES `think_route` WRITE;
 /*!40000 ALTER TABLE `think_route` DISABLE KEYS */;
-INSERT INTO `think_route` VALUES (1,'123','1',NULL,NULL,1,NULL,NULL,NULL);
+INSERT INTO `think_route` VALUES (1,'2e:60:d1:8a:3d:0a','1','2015-08-31 09:00:00',NULL,1,'abc','F_HD_26_V1.0_20141218','C_HD_26_V1.0_20141218'),(2,'456','2','2015-08-31 09:00:00',NULL,2,'def','F_HD_26_V1.0_20141218','C_HD_26_V1.0_20141218');
 /*!40000 ALTER TABLE `think_route` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -273,4 +273,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-08-28 16:21:26
+-- Dump completed on 2015-09-02 15:18:26
