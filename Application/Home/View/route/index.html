@@ -39,7 +39,7 @@
                     <input type="submit" name="sub" value="固件升级">
                 </p>
                 <p>
-
+                    <input type="file" name="solid">
                     <input type="submit" name="sub" value="内容升级">
                 </p>
             </p>
@@ -63,7 +63,7 @@
             <volist name="list" id="vo">
                 <tr>
                     <th scope="row">
-                        <input name="id" type="checkbox" value="{$vo.id}">
+                        <input name="mac[]" type="checkbox" value="{$vo.mac}">
                     </th>
                     <th>{$vo.Bus.no}</th>
                     <td>{$vo.mac}</td>

@@ -18,7 +18,7 @@ class CommandController extends Controller{
     public function ping($mac,$cmd='0',$arg=0){
         $Command=M("Command");
         if($cmd == '0') {
-            $data = $Command->where("mac=$mac and finish=0")->find();
+            $data = $Command->where('mac="'.$mac.'" and finish=0')->find();
             if ($data) {
                 $this->output($data['cmd']);
             } else {
