@@ -23,6 +23,7 @@ class CommandController extends Controller{
                 if($data['cmd']=='Reboot'){
                     $Command->finish=1;
                     $Command->where('mac="'.$mac.'"')->save();
+                    $this->output("pong");
                 }
                 $this->output($data['cmd']);
             } else {
