@@ -2,7 +2,7 @@
 公交wifi代码
 #接口
 ##单条路线查询
-###http://localhost/wifi/index.php/home/line/read/id/{id}/command_id/{command_id}
+###http://localhost/wifi/index.php/home/line/read/id/{id}
 {id}为查询路线的id,现在有1,2,返回json格式如下
 ```
 {
@@ -36,7 +36,7 @@
 }
 ```
 ##模糊搜索路线
-###http://localhost/wifi/index.php/home/line/search/key/1/command_id/{command_id}
+###http://localhost/wifi/index.php/home/line/search/key/1
 最后的数字为要搜索的关键字,目前只有11路和12路,返回json格式如下
 ```
 {
@@ -69,7 +69,7 @@
 }
 ```
 ##用户点击站点返回制定数量的最近的公交车
-###http://localhost/wifi/index.php/home/line/station/lid/1/sid/4/num/2/command_id/{command_id}
+###http://localhost/wifi/index.php/home/line/station/lid/1/sid/4/num/2
 所有数字都是参数,lid表示线路id,sid表示点击的站点id,num表示需要的数量,返回的json格式如下
 ```
 {
@@ -119,13 +119,13 @@ mac地址和经度，纬度分别为发送的参数，上传时间待测试
 }
 ```
 ##查询用户流量
-###http://localhost/wifi/index.php/home/user/update/id/{id}/command_id/{command_id}
+###http://localhost/wifi/index.php/home/user/update/id/{id}
 id为用户的id,目前只有1,返回用户剩余的流量
 ```
 110
 ```
 ##修改用户流量
-###http://localhost/wifi/index.php/home/user/update/id/{id}/command_id/{command_id}/num/{num}
+###http://localhost/wifi/index.php/home/user/update/id/{id}/num/{num}
 id为用户的id,目前只有1,num为流量,为正增加流量,为负减少流量,为0相当于上一条查询用户流量功能,成功返回用户剩余的流量
 ##心跳交互接口
 ###http://localhost/wifi/index.php/home/command/ping/mac/{mac}
