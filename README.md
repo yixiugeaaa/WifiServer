@@ -6,7 +6,6 @@
 {id}为查询路线的id,现在有1,2,返回json格式如下
 ```
 {
-    "command_id":"1",
     "name": "11路",
     "start_time": "2015-08-20 09:00:00",
     "end_time": "2015-08-20 19:00:00",
@@ -41,7 +40,6 @@
 最后的数字为要搜索的关键字,目前只有11路和12路,返回json格式如下
 ```
 {
-    "command_id":"1",
     "lines": [
         {
             "id": 1,
@@ -75,7 +73,6 @@
 所有数字都是参数,lid表示线路id,sid表示点击的站点id,num表示需要的数量,返回的json格式如下
 ```
 {
-    "command_id":"1",
     "bus": [
         {
             "no": "鲁B120",
@@ -125,10 +122,7 @@ mac地址和经度，纬度分别为发送的参数，上传时间待测试
 ###http://localhost/wifi/index.php/home/user/update/id/{id}/command_id/{command_id}
 id为用户的id,目前只有1,返回用户剩余的流量
 ```
-{
-    "command_id": "1",
-    "flow": 110
-}
+110
 ```
 ##修改用户流量
 ###http://localhost/wifi/index.php/home/user/update/id/{id}/command_id/{command_id}/num/{num}
