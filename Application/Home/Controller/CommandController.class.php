@@ -20,6 +20,10 @@ class CommandController extends Controller{
         if($cmd == '0') {
             $data = $Command->where('mac="'.$mac.'" and finish=0')->find();
             if ($data) {
+                if($data['cmd']=='Reboot'){
+                    $Command->finish=1;
+                    $Command->where('mac="'.$mac.'"')->save();
+                }
                 $this->output($data['cmd']);
             } else {
                 $this->output("pong");
@@ -33,6 +37,7 @@ class CommandController extends Controller{
                     $Command->finish=1;
                     $Command->where('mac="'.$mac.'"')->save();
                     break;
+                case "Reboot":
                 case "Ssid":
                     $data=$Command->where('mac="'.$mac.'"')->find();
                     if($arg!=$data['ssid']) {
