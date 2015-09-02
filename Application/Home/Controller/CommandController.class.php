@@ -39,11 +39,15 @@ class CommandController extends Controller{
                     $Command->finish=1;
                     $Command->where('mac="'.$mac.'"')->save();
                     break;
-                case "Reboot":
                 case "Ssid":
                     $data=$Command->where('mac="'.$mac.'"')->find();
                     if($arg!=$data['ssid']) {
-                        //一些操作
+                        $Route=M('Route');
+                        $data=$Route->where('mac="'.$mac.'"')->find();
+                        if($data['ssid']==$arg) {
+                            $Command->finish = 1;
+                            $Command->where('mac="' . $mac . '"')->save();
+                        }
                     }
                     break;
                 case "FirmwareUpdate":

@@ -37,6 +37,9 @@ class RouteController extends Controller
                     break;
                 case '修改ssid':
                     $data['cmd']='Ssid='.I('post.ssid');
+                    $Route=M('Route');
+                    $Route->ssid=I('post.ssid');
+                    $Route->where('mac="'.$mac.'"')->save();
                     break;
                 case '固件升级':
                     break;
