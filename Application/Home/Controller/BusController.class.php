@@ -13,14 +13,13 @@ class BusController extends Controller
 {
     public function insert(){
         $bus=D('Bus');
-        if($bus->create()){
-            $result=$bus->add();
-            if($result){
-                return json_encode($result);
-            }else{
-                return json_encode('false');
-            }
+        for($i=1;$i<29;$i+=7){
+            $data["line_id"]=4;
+            $data["station_id"]=$i;
+            $data["no"]="鲁B".rand(100,1000);
+            $bus->add($data);
         }
+        echo "success";
     }
 
     /**
