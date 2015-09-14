@@ -13,6 +13,8 @@ class TestController extends Controller
 {
     public function index(){
         $ip = $_SERVER["REMOTE_ADDR"];
-        echo $ip;
+        //echo $ip;
+        $data = @file_get_contents("http://ip.taobao.com/service/getIpInfo.php?ip=".$ip);
+        echo json_decode($data,true);
     }
 }
