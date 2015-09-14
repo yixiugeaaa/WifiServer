@@ -16,7 +16,7 @@ class TestController extends Controller
         //echo $ip;
         $data = @file_get_contents("http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json&ip=".$ip);
         //var_dump($data);
-        var_dump($data);
+        //var_dump($data);
         echo json_encode($data);
     }
 }
