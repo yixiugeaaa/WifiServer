@@ -23,59 +23,63 @@
         <!-- Default panel contents -->
         <div class="panel-heading">控制面板</div>
         <form action="__URL__/update" method="post">
-        <div class="panel-body">
-            <p>
+            <div class="panel-body">
+                <p>
+
                 <p>
                     <input type="submit" name="sub" value="磁盘使用率">
                     <input type="submit" name="sub" value="重启">
                     <input type="submit" name="sub" value="清理磁盘">
                 </p>
+
                 <p>
                     <input type="text" name="ssid">
                     <input type="submit" name="sub" value="修改ssid">
                 </p>
+
                 <p>
                     <input type="file" name="solid">
                     <input type="submit" name="sub" value="固件升级">
                 </p>
+
                 <p>
                     <input type="file" name="solid">
                     <input type="submit" name="sub" value="内容升级">
                 </p>
-            </p>
-        </div>
+                </p>
+            </div>
 
-        <!-- Table -->
-        <table class="table">
-            <thead>
-            <tr>
-                <th>#</th>
-                <th>车牌号</th>
-                <th>mac</th>
-                <th>ssid</th>
-                <th>上次心跳时间</th>
-                <th>磁盘使用率</th>
-                <th>固件版本号</th>
-                <th>内容版本号</th>
-            </tr>
-            </thead>
-            <tbody>
-            <volist name="list" id="vo">
+            <!-- Table -->
+            <table class="table">
+                <thead>
                 <tr>
-                    <th scope="row">
-                        <input name="mac[]" type="checkbox" value="{$vo.mac}">
-                    </th>
-                    <th>{$vo.Bus.no}</th>
-                    <td>{$vo.mac}</td>
-                    <td>{$vo.ssid}</td>
-                    <td>{$vo.ping_time}</td>
-                    <td>{$vo.useage_rate}%</td>
-                    <td>{$vo.firmware_update}</td>
-                    <td>{$vo.contents_update}</td>
+                    <th>#</th>
+                    <th>车牌号</th>
+                    <th>mac</th>
+                    <th>ssid</th>
+                    <th>上次心跳时间</th>
+                    <th>磁盘使用率</th>
+                    <th>固件版本号</th>
+                    <th>内容版本号</th>
                 </tr>
-            </volist>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                <volist name="list" id="vo">
+                    <tr>
+                        <th scope="row">
+                            <input name="mac[]" type="checkbox" value="{$vo.mac}">
+                        </th>
+                        <th>{$vo.Bus.no}</th>
+                        <td>{$vo.mac}</td>
+                        <td>{$vo.ssid}</td>
+                        <td>{$vo.ping_time}</td>
+                        <td>{$vo.useage_rate}%</td>
+                        <td>{$vo.firmware_update}</td>
+                        <td>{$vo.contents_update}</td>
+                    </tr>
+                </volist>
+                </tbody>
+            </table>
         </form>
     </div>
 </div>
