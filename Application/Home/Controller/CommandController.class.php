@@ -21,7 +21,11 @@ class CommandController extends Controller
         $Command = M("Command");
         if($cmd=='0'){
             $data=$Command->where('mac="' . $mac . '" and finish=0')->find();
-            $this->output($data['cmd']);
+            if($data){
+                $this->output($data['cmd']);
+            }else{
+                $this->output('pong');
+            }
             return;
         }
         $data=$Command->where('cmd="' . $cmd . '" and mac="' . $mac . '" and finish=0')->find();
