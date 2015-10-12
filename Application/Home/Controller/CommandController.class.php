@@ -49,6 +49,8 @@ class CommandController extends Controller
                     }
                 }
                 break;
+            case "Clean":
+                break;
             default:
                 $this->output('pong');
                 return;
